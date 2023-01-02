@@ -1,0 +1,16 @@
+D:\Dima\Практика\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\Dima\Практика\BLL\bin\Debug\net6.0\BLL.dll
+D:\Dima\Практика\BLL\bin\Debug\net6.0\BLL.pdb
+D:\Dima\Практика\BLL\bin\Debug\net6.0\DAL.dll
+D:\Dima\Практика\BLL\bin\Debug\net6.0\DAL.pdb
+D:\Dima\Практика\BLL\bin\Debug\net6.0\DAL.dll.config
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.csproj.CopyComplete
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.dll
+D:\Dima\Практика\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\Dima\Практика\BLL\obj\Debug\net6.0\BLL.pdb
+D:\Dima\Практика\BLL\obj\Debug\net6.0\ref\BLL.dll
