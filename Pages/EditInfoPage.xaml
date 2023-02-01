@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PL.Pages.EditInfoPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout Spacing="15"
+            Padding="30,50"
+            VerticalOptions="Start">
+
+        <Label Text="Редактирование информации"
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="25"/>
+
+        <Label Text="Номер телефона"
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <Entry x:Name="NumberEntry"
+            ClearButtonVisibility="WhileEditing"
+            Placeholder="Номер"
+            FontFamily="Manrope"
+            WidthRequest="200"/>
+
+        <Label Text="Почта"
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <Entry x:Name="EmailEntry"
+            ClearButtonVisibility="WhileEditing"
+            FontFamily="Manrope"
+            Placeholder="Почта"
+            WidthRequest="200"/>
+
+        <Button x:Name="SaveButton"
+            Text="Сохранить изменения"
+            WidthRequest="250"
+            FontSize="18"
+            Margin="0, 50"
+            BackgroundColor="#4D75EA"
+            FontFamily="Manrope"
+            Clicked="Save"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>

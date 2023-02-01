@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PL.Pages.StatisticsPage"
+             Title="StatisticsPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout Spacing="20"
+            Padding="30,50"
+            VerticalOptions="Start">
+
+        <Label Text="Ваша статистика"
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="25"/>
+
+        <Label Text="Выберите дату: "
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <DatePicker x:Name="ChosenDate"
+            HorizontalOptions="Center"/>
+
+        <Label x:Name="StepsLabel"
+            Text="Шаги: "
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <Label x:Name="WaterLabel"
+            Text="Выпито воды: "
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <Label x:Name="CaloriesLabel"
+            Text="Поглощено калорий: "
+            HorizontalOptions="Center"
+            FontFamily="Manrope"
+            FontSize="17"/>
+
+        <Button Text="Показать статистику"
+            FontFamily="Manrope"
+            FontSize="17"
+            BackgroundColor="#4D75EA"
+            MaximumWidthRequest="320"
+            Clicked="ShowStatistic"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
