@@ -11,8 +11,8 @@
         public int infoId { get; set; }
         public PersonalInfo personalInfo { get; set; }
 
-        public int activityId { get; set; }
-        public PersonalActivity personalActivity { get; set; }
+        public int activityListId { get; set; }
+        public PersonalActivitiesList personalActivityList { get; set; }
 
         public int bodyId { get; set; }
         public BodyParameters bodyParameters { get; set; }

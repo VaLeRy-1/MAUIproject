@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DAL.Entities
+﻿namespace DAL.Entities
 {
     public class PersonalActivity
     {
@@ -8,8 +6,8 @@ namespace DAL.Entities
         public int steps { get; set; }
         public int calories { get; set; }
         public int water { get; set; }
-
-        public User User { get; set; }
+        public DateTime date { get; set; }
+        public int listId { get; set; }
 
     }
 }

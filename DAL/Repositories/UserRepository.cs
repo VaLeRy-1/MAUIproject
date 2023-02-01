@@ -32,7 +32,7 @@ namespace DAL.Repositories
         {
             context.Users.Find(user.id).name = user.name;
             context.Users.Find(user.id).age = user.age;
-            context.Users.Find(user.id).activityId = user.activityId;
+            context.Users.Find(user.id).activityListId = user.activityListId;
             context.Users.Find(user.id).infoId = user.infoId;
             context.Users.Find(user.id).bodyId = user.bodyId;
             context.Users.Find(user.id).hash = user.hash;

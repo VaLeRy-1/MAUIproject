@@ -3,9 +3,7 @@ using BLL.DTO;
 using DAL.Entities;
 using DAL.Repositories;
 using System.Security.Cryptography;
-using System.Security.Policy;
 using System.Text;
-using System.Xml.Linq;
 
 namespace BLL.Services
 {
@@ -46,7 +44,7 @@ namespace BLL.Services
             return true;
         }
 
-        public (bool, string) IsLogin(string name, string password)
+        public (bool, string, int) IsLogin(string name, string password)
         {
             List<User> users = (List<User>)Unit.users.GetAll();
 
@@ -58,16 +56,16 @@ namespace BLL.Services
 
                     if (hashToCompare.SequenceEqual(Convert.FromHexString(item.hash)))
                     {
-                        return (true, "");
+                        return (true, "", item.age);
                     }
                     else
                     {
-                        return (false, "Неверный пароль");
+                        return (false, "Неверный пароль", 0);
                     }
                 }
             }
 
-            return (false, "Нет пользователя под таким именем");
+            return (false, "Нет пользователя под таким именем", 0);
         }
     }
 }

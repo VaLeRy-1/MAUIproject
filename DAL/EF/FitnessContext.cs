@@ -14,6 +14,8 @@ namespace DAL.EF
         public DbSet<DifficultyLevel> DifficultyLevels { get; set; }
         public DbSet<Exercises> Exercises { get; set; }
         public DbSet<Training> Trainings { get; set; }
+        public DbSet<PersonalActivitiesList> Lists { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -29,6 +31,7 @@ namespace DAL.EF
             modelBuilder.Entity<DifficultyLevel>(DifficultyConfigure);
             modelBuilder.Entity<Exercises>(ExercisesConfigure);
             modelBuilder.Entity<Training>(TrainingConfigure);
+            modelBuilder.Entity<PersonalActivitiesList>(PersonalActivitiesListConfigure);
         }
 
         public void UserConfigure(EntityTypeBuilder<User> builder)
@@ -37,7 +40,7 @@ namespace DAL.EF
             builder.HasKey(u => u.id);
             builder.Property(u => u.name).HasColumnName("firstname").HasMaxLength(30);
             builder.Property(u => u.infoId).HasColumnName("personalinfo");
-            builder.Property(u => u.activityId).HasColumnName("personalactivity");
+            builder.Property(u => u.activityListId).HasColumnName("personalactivitiesList");
             builder.Property(u => u.bodyId).HasColumnName("bodyparam");
         }
 
@@ -53,10 +56,9 @@ namespace DAL.EF
 
         public void PersonalActivityConfigure(EntityTypeBuilder<PersonalActivity> builder)
         {
-            builder.ToTable("PersonalActivities");
+            builder.ToTable("Personalactivities");
             builder.HasKey(a => a.id);
             builder.Property(a => a.id).HasColumnName("idpersact");
-            builder.HasOne(a => a.User).WithOne(u => u.personalActivity).HasForeignKey<User>(u => u.activityId);
         }
 
         public void BodyParametersConfigure(EntityTypeBuilder<BodyParameters> builder)
@@ -83,6 +85,14 @@ namespace DAL.EF
         {
             builder.ToTable("training");
             builder.HasKey(t => t.id);
+        }
+
+        public void PersonalActivitiesListConfigure(EntityTypeBuilder<PersonalActivitiesList> builder)
+        {
+            builder.ToTable("PersonalActiviesList");
+            builder.HasKey(p => p.id);
+            builder.Property(p => p.id).HasColumnName("listId");
+            builder.HasOne(p => p.User).WithOne(u => u.personalActivityList).HasForeignKey<User>(u => u.activityListId);
         }
     }
 }
