@@ -1,4 +1,4 @@
-﻿namespace FitnessApp;
+﻿namespace Fitness;
 
 public partial class AppShell : Shell
 {

@@ -1,17 +1,27 @@
-﻿using FitnessApp.Models;
-
-namespace FitnessApp;
+﻿namespace Fitness;
+using Npgsql;
 
 public partial class MainPage : ContentPage
 {
-	public TrainingModel Training { get; private set; }
+	int count = 0;
 
-	public MainPage(TrainingModel training)
+	public MainPage()
 	{
 		InitializeComponent();
-		Training = training;
-		BindingContext = Training;
-    }
+		using var connection = new NpgsqlConnection("Host=localhost;Username=postgres;Password=14Dima1514;Database=FitnessApp");
+		connection.Open();
+	}
 
+	private void OnCounterClicked(object sender, EventArgs e)
+	{
+		count++;
+
+		if (count == 1)
+			CounterBtn.Text = $"Clicked {count} time";
+		else
+			CounterBtn.Text = $"Clicked {count} times";
+
+		SemanticScreenReader.Announce(CounterBtn.Text);
+	}
 }
 

@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace FitnessApp;
+namespace Fitness;
 
 [Application]
 public class MainApplication : MauiApplication

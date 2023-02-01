@@ -1,15 +1,10 @@
-﻿using AutoMapper;
-using BLLLayer.DTO;
-using BLLLayer.Services;
-using FitnessApp.Models;
-
-namespace FitnessApp;
+﻿namespace Fitness;
 
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
-       var builder = MauiApp.CreateBuilder();
+		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>

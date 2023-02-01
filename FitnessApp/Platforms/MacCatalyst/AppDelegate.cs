@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace FitnessApp;
+namespace Fitness;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
