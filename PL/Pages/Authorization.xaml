@@ -58,13 +58,10 @@
                    Placeholder="Введите имя"
                    WidthRequest="200"/>
 
-                <Label HorizontalOptions="Center"
-                   Text="Введите дату рождения"
-                   FontSize="17"
-                   FontFamily="Manrope"/>
-                
-                <DatePicker x:Name="BirthDate"
-                   HorizontalOptions="Center"
+                <Entry x:Name="AgeEntry"
+                   ClearButtonVisibility="WhileEditing"
+                   Placeholder="Введите возраст"
+                   Keyboard="Numeric"
                    WidthRequest="200"
                    FontFamily="Manrope"/>
 

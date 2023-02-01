@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using BLL.DTO;
 using BLL.Services;
-using DAL.Entities;
 using PL.Models;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace PL;
 
@@ -48,12 +45,7 @@ public partial class MainPage : ContentPage
 		UserViewModel newUser = new UserViewModel();
 		newUser.Name = RegistrationEntry.Text;
 
-		DateTime birth = BirthDate.Date;
-		newUser.Age = DateTime.Now.Year - birth.Year;
-        if (DateTime.Now.DayOfYear < birth.DayOfYear)
-		{
-            newUser.Age = newUser.Age - 1;
-        }
+        newUser.Age = int.Parse(AgeEntry.Text);
 
         newUser.Password = PasswordRepeatEntry.Text;
 
@@ -69,6 +61,9 @@ public partial class MainPage : ContentPage
         }
         else
         {
+            CurrentUser.Name = newUser.Name;
+            CurrentUser.Age = newUser.Age;
+            App.Current.MainPage = new NavigationPage(new TabPage());
         }
     }
 
@@ -89,15 +84,21 @@ public partial class MainPage : ContentPage
 
         AuthorizationService authorization = new AuthorizationService();
 
-        (bool, string) result = authorization.IsLogin(LoginEntry.Text, PasswordLoginEntry.Text);
+        (bool, string, int) result = authorization.IsLogin(LoginEntry.Text, PasswordLoginEntry.Text);
 
         if (result.Item1)
         {
+            CurrentUser.Name = loginEntries[0].Text;
+            CurrentUser.Age = result.Item3;
+            App.Current.MainPage = new NavigationPage(new TabPage());
         }
         else
         {
             ErrorLabel.Text = result.Item2;
         }
+
+        //CurrentUser.Name = "Дима";
+        //App.Current.MainPage = new NavigationPage(new TabPage());
     }
 
     private void ChangeMenu(object sender, EventArgs e)
