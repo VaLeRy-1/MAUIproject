@@ -88,37 +88,17 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
-            
-            
-            <!--<VerticalStackLayout 
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                BackgroundColor="#7F5CC9D5"
-                WidthRequest="300"
-                HeightRequest="200">
-
-                <HorizontalStackLayout 
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    WidthRequest="300"
-                    Padding="0,7">
-                    
-                    <Label Text="Название" 
-                        FontFamily="Manrope"
-                        HorizontalOptions="Start"/>
-
-                    <Label Text="10 минут"
-                        FontFamily="Manrope"
-                        HorizontalOptions="End"/>
-                    
-                </HorizontalStackLayout>
-
-            </VerticalStackLayout>
-            
-            <RoundRectangle Fill="#7F5CC9D5" Stroke="#7F5CC9D5" CornerRadius="10" HeightRequest="250" WidthRequest="400"/>-->
 
         </VerticalStackLayout>
-        
+
+        <Button x:Name="ChangeTrainings"
+            Text="Мои тренировки"
+            WidthRequest="290"
+            FontSize="20"
+            Margin="0, 60"
+            BackgroundColor="#4D75EA"
+            FontFamily="Manrope"
+            Clicked="GoToChangeTrainings"/>
+
     </VerticalStackLayout>
 </ContentPage>

@@ -1,3 +1,6 @@
+using AutoMapper;
+using BLL.DTO;
+using BLL.Services;
 using PL.Models;
 
 namespace PL.Pages;
@@ -12,24 +15,24 @@ public partial class StartPage : ContentPage
 
 		WelcomeLabel.Text += CurrentUser.Name;
 
-        Trainings.Add(new TrainingGroup("Trainings", new List<TrainingViewModel>
+        var mapper = new MapperConfiguration(cfg => cfg.CreateMap<TrainingDTO, TrainingViewModel>()).CreateMapper();
+
+        TrainingService trainingService = new TrainingService();
+        List<TrainingDTO> trainingsDTO = trainingService.GetTrainings(CurrentUser.Name);
+        List<TrainingViewModel> trainings = new List<TrainingViewModel>();
+
+        foreach (var item in trainingsDTO)
         {
-            new TrainingViewModel
-            {
-                Name = "Пресс",
-                Time = "20",
-                Difficulty = "Сложно",
-                Quantity = "10"
-            },
-            new TrainingViewModel
-            {
-                Name = "Ноги",
-                Time = "30",
-                Difficulty = "Средне",
-                Quantity = "7"
-            }
-        }));
+            trainings.Add(mapper.Map<TrainingDTO, TrainingViewModel>(item));
+        }
+
+        Trainings.Add(new TrainingGroup("Trainings", trainings));
 
         TrainingCollection.ItemsSource = Trainings;
+    }
+
+    private void GoToChangeTrainings(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new ChangeTrainingsPage());
     }
 }
