@@ -32,7 +32,12 @@ namespace DAL.Repositories
         {
             Training newTraining = context.Trainings.Find(training.id);
             newTraining.name = training.name;
-        }
+            newTraining.time = training.time;
+            newTraining.quantity = training.quantity;
+            newTraining.difficultyLevelId = training.difficultyLevelId;
+            newTraining.exerciseListId = training.exerciseListId;
+            newTraining.trainingListId = training.trainingListId;
+    }
 
         public void Delete(int trainingID)
         {

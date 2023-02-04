@@ -1,8 +1,7 @@
 ﻿namespace DAL.Entities
 {
-    public class DifficultyLevel
+    public class TrainingList
     {
         public int id { get; set; }
-        public string name { get; set; }
     }
 }

@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DAL.Entities
+﻿namespace DAL.Entities
 {
     public class Training
     {
-        [Key]
         public int id { get; set; }
         public string name { get; set; }
-        public int[] exercises { get; set; }
+        public int time { get; set; }
+        public int quantity { get; set; }
+        public int difficultyLevelId { get; set; }
+        public int exerciseListId { get; set; }
+        public int trainingListId { get; set; }
 
     }
 }

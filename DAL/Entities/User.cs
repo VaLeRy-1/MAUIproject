@@ -14,6 +14,8 @@
         public int activityListId { get; set; }
         public PersonalActivitiesList personalActivityList { get; set; }
 
+        public int trainingListId { get; set; }
+
         public int bodyId { get; set; }
         public BodyParameters bodyParameters { get; set; }
 

@@ -12,19 +12,19 @@ namespace DAL.Repositories
             this.context = context;
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<PersonalActivitiesList> GetAll()
         {
-            return context.Users.ToList();
+            return context.ActivitiesLists.ToList();
         }
 
         public PersonalActivitiesList GetById(int listID)
         {
-            return context.Lists.Find(listID);
+            return context.ActivitiesLists.Find(listID);
         }
 
         public void Insert(PersonalActivitiesList list)
         {
-            context.Lists.Add(list);
+            context.ActivitiesLists.Add(list);
         }
 
         public void Update(PersonalActivitiesList list)
@@ -33,11 +33,11 @@ namespace DAL.Repositories
 
         public void Delete(int listID)
         {
-            PersonalActivitiesList list = context.Lists.Find(listID);
+            PersonalActivitiesList list = context.ActivitiesLists.Find(listID);
 
             if (list != null)
             {
-                context.Lists.Remove(list);
+                context.ActivitiesLists.Remove(list);
             }
         }
     }
